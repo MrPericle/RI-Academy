@@ -5,19 +5,21 @@ import java.util.Scanner;
 
 // Sistema di gestione prenotazioni
 // Punti: 
-//1. Prenotare posto specifico
-//2. Cercare per nome/attributo
-//3. Visualizzare tutti i posti disponibili e prenotati
-//4. Creare un report abbinando posti liberi e occupati (percentuale)
-//5. Poter chiudere il ciclo
+//1.  Prenotare posto specifico
+//2.  Cercare per nome/attributo
+//2.a Modifica posto
+//3.  Visualizzare tutti i posti disponibili e prenotati
+//4.  Creare un report abbinando posti liberi e occupati (percentuale)
+//5.  Poter chiudere il ciclo
 
 public class BookingSystem {
     public static void main(String[] args) {
+        
         boolean running = true;
         int menuChoice = 0;
         int postiOccupati=0;
-        int postiTotali=24;
-        String nome, prenotazione, pattern;
+        final int POSTI_TOTALI=24;
+        String nome, prenotazione;
         int rowIdx, colIdx;
         ArrayList<String> booking = new ArrayList<>();
         Scanner intScanner = new Scanner(System.in);
@@ -47,17 +49,17 @@ public class BookingSystem {
                     nome = stringScanner.nextLine();
                     System.out.println("inserire riga (0-2): ");
                     rowIdx = intScanner.nextInt();
-                    while (rowIdx<0 || rowIdx>=posti.length) {
+                    while (rowIdx<0 || rowIdx>=posti.length) { //controllo su input valido
                         System.out.println("inserire una riga valida.");
                         rowIdx = intScanner.nextInt();
                     }
                     System.out.println("inserire colonna (0-7): ");
                     colIdx = intScanner.nextInt();
-                    while (colIdx<0 || rowIdx>=posti[0].length) {
+                    while (colIdx<0 || rowIdx>=posti[0].length) { //controllo su input valido
                         System.out.println("inserire una riga valida.");
                         rowIdx = intScanner.nextInt();
                     }
-                    if(!posti[rowIdx][colIdx]){
+                    if(!posti[rowIdx][colIdx]){  //se il posto e libero
                         System.out.println("Prenotazione effettuata");
                         posti[rowIdx][colIdx] = true;
                         booking.add(nome+" "+rowIdx+"-"+colIdx);
@@ -72,15 +74,53 @@ public class BookingSystem {
                     System.out.println("Nome prenotazione: ");
                     prenotazione = stringScanner.nextLine();
                     boolean found = false;
-                    for(String booked: booking){
-                        if(booked.startsWith(prenotazione)){
-                            String postoPrenotato = booked.substring(prenotazione.length());
+                    String postoPrenotato = null;
+                    int bookingIndex = 0;
+                    for(bookingIndex = 0; bookingIndex<booking.size() && !found; bookingIndex++){
+                        if(booking.get(bookingIndex).startsWith(prenotazione)){ //se la prenotazione inizia con il nome cercato
+                            postoPrenotato = booking.get(bookingIndex).substring(prenotazione.length()).trim(); //estraggo la sottostringa contenente gli indici dei posti
                             System.out.println("Prenotazione trovata al posto: "+ postoPrenotato);
                             found = true;
                         }
                     }
                     if(!found){
                         System.out.println("Prenotazione non trovata.");
+                    }
+                    else{
+                        System.out.println("Desideri modificare la prenotazione? y/n");
+                        String modifica = stringScanner.nextLine();
+                        if(modifica.toLowerCase().equals("y")){
+                            String[] indici = postoPrenotato.split("-"); //estraggo gli indici numerici dalla sottostringa contenente gli indici
+                            int oldRowIdxPrenotazione = Integer.valueOf(indici[0]);
+                            int oldColIdxPrenotazione = Integer.valueOf(indici[1]);
+
+                            System.out.println("Inserire nuova posizione riga (0-2):");
+                            int newRowIdxPrenotazione = intScanner.nextInt();
+                            while (newRowIdxPrenotazione<0 || newRowIdxPrenotazione>=posti.length) {
+                                System.out.println("inserire una riga valida.");
+                                rowIdx = intScanner.nextInt();
+                            }
+
+                            System.out.println("Inserire nuova posizione colonna (0-7)");
+                            int newColIdxPrenotazione = intScanner.nextInt();
+                            while (newColIdxPrenotazione<0 || newColIdxPrenotazione>=posti[0].length) {
+                                System.out.println("inserire una riga valida.");
+                                rowIdx = intScanner.nextInt();
+                            }
+
+                            if(!posti[newRowIdxPrenotazione][newColIdxPrenotazione]){ //se il nuovo posto e disponibile aggiorno la tabella delle preotazioni
+                                booking.set(bookingIndex-1, booking.get(bookingIndex-1).substring(0,prenotazione.length())+" "+newRowIdxPrenotazione+"-"+newColIdxPrenotazione); //modifico la stringa della prenotazione
+                                posti[oldRowIdxPrenotazione][oldColIdxPrenotazione] = false;
+                                posti[newRowIdxPrenotazione][newColIdxPrenotazione] = true;
+                                System.out.println("Prenotazione modificata con successo.");
+                                
+                            }
+                            else{
+                                System.out.println("Posto occupato, impossibile modificare la prenotazione");
+                            }
+
+                            
+                        }
                     }
 
                     break;
@@ -94,11 +134,11 @@ public class BookingSystem {
                     break;
                 case 4:
                     System.out.println(postiOccupati);
-                    float percentuale = ((float)postiOccupati/postiTotali) *100;
+                    float percentuale = ((float)postiOccupati/POSTI_TOTALI) *100;
                     System.out.println("Percentuale posti occupati: "+percentuale+"%");
                     break;
                 case 0:
-                    System.out.println("Chiusura...");
+                    System.out.println("Chiusura applicazione...");
                     running = false;
                     break;
                
@@ -109,7 +149,8 @@ public class BookingSystem {
 
         }
         
-
+        intScanner.close();
+        stringScanner.close();
     }
     
 }
