@@ -1,5 +1,3 @@
-package l19_11.esercizi.Esercizio_recap;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
