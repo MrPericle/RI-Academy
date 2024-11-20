@@ -1,5 +1,3 @@
-package primo_esercizio_java.Esercizi;
-
 import java.util.Scanner;
 
 public class EsercizioWhile {
