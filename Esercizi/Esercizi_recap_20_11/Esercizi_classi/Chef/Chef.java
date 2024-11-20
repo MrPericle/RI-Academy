@@ -16,15 +16,22 @@ public class Chef {
     public String helperComposer(){
         String retString = "";
         switch (tipo.toLowerCase()) {
-            case "gourmet":
-                retString = "Fancy";
+            case "stellato":
+                retString = "gourmet";
                 break;
             case "casereccio":
-                retString = "Come a casa";
+                retString = "come a casa della nonna";
                 break;
             case "fusion":
-                retString = "Orientale";
+                retString = "con sapori orientali";
                 break;
+            case "poke":
+                retString = "su una ciotola di riso";
+                break;
+            case "pub":
+                retString = "servito con birra alla spina";
+                break;
+        
         
             default:
                 break;
@@ -36,20 +43,21 @@ public class Chef {
         for (String ingrediente : ingredienti) {
             switch (ingrediente.toLowerCase()) {
                 case "carne":
-                    System.out.println("Prepara una grigliata "+helperComposer());
+                    System.out.println("Posso prepara una grigliata "+helperComposer());
                     break;
                 case "pesce":
-                    System.out.println("Prepara una frittura di pesce "+helperComposer());
+                    System.out.println("Posso prepara una frittura di pesce "+helperComposer());
                     break;
                 case "verdure":
-                    System.out.println("Prepara un contorno "+helperComposer());
+                    System.out.println("Posso prepara un contorno "+helperComposer());
                     break;
                 case "uova":
-                    System.out.println("Prepara una frittata "+helperComposer());
+                    System.out.println("Posso prepara una frittata "+helperComposer());
                     break;
-            
+                case "pasta":
+                    System.out.println("Posso prepara un piatto di pasta");
                 default:
-                    System.out.println("Piatto a sorpresa "+helperComposer());
+                    System.out.println("Posso prepara un piatto a sorpresa "+helperComposer());
                     break;
             }
         }

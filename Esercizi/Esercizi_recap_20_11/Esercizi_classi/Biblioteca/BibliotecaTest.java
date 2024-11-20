@@ -9,9 +9,9 @@ public class BibliotecaTest {
         biblioteca.createBook("Autore2", 800);
         biblioteca.createBook("Autore3", 250);
         biblioteca.printAllBooks();
-        Book libro = biblioteca.ricercaPerAutore("Autore2");
-        Book libro2 = biblioteca.ricercaPerNumeroPagineMassime(400);
-        Book nullBook = biblioteca.ricercaPerAutore("Autore4");
+        biblioteca.ricercaPerAutore("Autore2");
+        biblioteca.ricercaPerNumeroPagineMassime(400);
+        biblioteca.ricercaPerAutore("Autore4");
 
     }
     

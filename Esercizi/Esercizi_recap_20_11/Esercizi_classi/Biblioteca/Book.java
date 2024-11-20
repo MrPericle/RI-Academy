@@ -11,6 +11,7 @@ public class Book {
     }
 
     public String printBook(){
+        //stampa le info sul libro
         return "Autore: "+nomeAutore+". "+numeroPagine+"p.";
     }
     
