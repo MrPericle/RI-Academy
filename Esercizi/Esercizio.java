@@ -1,4 +1,6 @@
 package primo_esercizio_java.Esercizi;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Esercizio {
@@ -32,7 +34,6 @@ public class Esercizio {
         else{
             System.out.println("Id non valido");
         }
-
         intScanner.close();
         strScanner.close();
     }
