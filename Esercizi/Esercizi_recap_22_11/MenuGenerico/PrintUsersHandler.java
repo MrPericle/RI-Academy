@@ -3,28 +3,25 @@ package Esercizi_recap_22_11.MenuGenerico;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PrintUsers implements IMenuHandler{
+public class PrintUsersHandler extends UsersHandler{
 
-    ArrayList<String> fatherList = new ArrayList<>();
     Scanner stringScanner = new Scanner(System.in);
     
 
-    public PrintUsers(ArrayList<String> fatherList){
-        this.fatherList = fatherList;
+    public PrintUsersHandler(){
+        super();
     }
 
 
 
     @Override
     public void handle() {
-        for (String string : fatherList) {
+        for (String string : super.userList) {
             System.out.println(string);
         }
     
     }
         
-
-
     @Override
     public String printInfo() {
         return "Stampa utenti";

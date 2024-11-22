@@ -3,14 +3,13 @@ package Esercizi_recap_22_11.MenuGenerico;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddUserHandler implements IMenuHandler{
+public class AddUserHandler extends UsersHandler{
 
-    ArrayList<String> fatherList = new ArrayList<>();
     Scanner stringScanner = new Scanner(System.in);
     
 
-    public AddUserHandler(ArrayList<String> fatherList){
-        this.fatherList = fatherList;
+    public AddUserHandler(){
+        super();
     }
 
 
@@ -21,7 +20,7 @@ public class AddUserHandler implements IMenuHandler{
         String userToAdd = stringScanner.nextLine();
 
         if(userToAdd!=null){
-            fatherList.add(userToAdd);
+            super.userList.add(userToAdd);
         }
         
     }
