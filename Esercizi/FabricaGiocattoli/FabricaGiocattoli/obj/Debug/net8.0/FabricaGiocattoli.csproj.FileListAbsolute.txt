@@ -1,0 +1,14 @@
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\bin\Debug\net8.0\FabricaGiocattoli.exe
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\bin\Debug\net8.0\FabricaGiocattoli.deps.json
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\bin\Debug\net8.0\FabricaGiocattoli.runtimeconfig.json
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\bin\Debug\net8.0\FabricaGiocattoli.dll
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\bin\Debug\net8.0\FabricaGiocattoli.pdb
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\obj\Debug\net8.0\FabricaGiocattoli.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\obj\Debug\net8.0\FabricaGiocattoli.AssemblyInfoInputs.cache
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\obj\Debug\net8.0\FabricaGiocattoli.AssemblyInfo.cs
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\obj\Debug\net8.0\FabricaGiocattoli.csproj.CoreCompileInputs.cache
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\obj\Debug\net8.0\FabricaGiocattoli.dll
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\obj\Debug\net8.0\refint\FabricaGiocattoli.dll
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\obj\Debug\net8.0\FabricaGiocattoli.pdb
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\obj\Debug\net8.0\FabricaGiocattoli.genruntimeconfig.cache
+C:\Users\lopergamo\Desktop\R&IAcademy\dotnetExercise\FabricaGiocattoli\FabricaGiocattoli\obj\Debug\net8.0\ref\FabricaGiocattoli.dll
